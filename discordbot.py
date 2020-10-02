@@ -174,7 +174,7 @@ async def yodobashi(ctx):
 
     voice_client.play(ffmpeg_audio_source)
 
-    time.sleep(8)
+    time.sleep()
 
 #    await ctx.send("再生しました。")
 
