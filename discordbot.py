@@ -3,6 +3,7 @@ from discord.ext import commands
 import os
 import traceback
 import time
+import random
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -31,7 +32,7 @@ async def fire(ctx):
     ffmpeg_audio_source = discord.FFmpegPCMAudio("Fire.mp3")
     voice_client.play(ffmpeg_audio_source)
 
-    time.sleep(2)
+    time.sleep(1)
 
 #    await ctx.send("再生しました。")
 
@@ -54,11 +55,44 @@ async def yes(ctx):
     ffmpeg_audio_source = discord.FFmpegPCMAudio("Yes.mp3")
     voice_client.play(ffmpeg_audio_source)
 
-    time.sleep(2)
+    time.sleep(1)
 
 #    await ctx.send("再生しました。")
 
     await voice_client.disconnect()
+
+
+@bot.command()
+async def f1(ctx):
+#    await ctx.send('pong')
+
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+
+    rnd = random.randint(1,3)
+    
+
+    channel = voice_state.channel
+
+    await channel.connect()
+
+    voice_client = ctx.message.guild.voice_client
+
+    if rnd = 1:
+        ffmpeg_audio_source = discord.FFmpegPCMAudio("passing1.mp3")
+    elif rnd = 2:
+        ffmpeg_audio_source = discord.FFmpegPCMAudio("passing2.mp3")
+    elif rnd = 3:
+        ffmpeg_audio_source = discord.FFmpegPCMAudio("passing3.mp3")
+
+    voice_client.play(ffmpeg_audio_source)
+
+    time.sleep(5)
+
+#    await ctx.send("再生しました。")
+
+    await voice_client.disconnect()
+
 
 
 
