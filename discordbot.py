@@ -20,8 +20,6 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong')
 
-
-@bot.command()
 async def fire(ctx):
     voice_client = ctx.message.guild.voice_client
     voice_state = ctx.author.voice
