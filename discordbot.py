@@ -109,5 +109,30 @@ async def f2(ctx):
     await voice_client.disconnect()
 
 
+@bot.command()
+async def thomas(ctx):
+#    await ctx.send('pong')
+
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+
+    channel = voice_state.channel
+
+    await channel.connect()
+
+    voice_client = ctx.message.guild.voice_client
+
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("thomas.mp3")
+
+    voice_client.play(ffmpeg_audio_source)
+
+    time.sleep(5)
+
+#    await ctx.send("再生しました。")
+
+    await voice_client.disconnect()
+
+
+
 
 bot.run(token)
