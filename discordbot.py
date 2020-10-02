@@ -1,7 +1,7 @@
-import discord
 from discord.ext import commands
 import os
 import traceback
+import time
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -18,6 +18,7 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong')
 
+async def fire(ctx):
     voice_client = ctx.message.guild.voice_client
     voice_state = ctx.author.voice
 
@@ -27,8 +28,13 @@ async def ping(ctx):
 
     voice_client = ctx.message.guild.voice_client
 
+
+    await ctx.message.attachments[0].save("tmp.mp3")
+
     ffmpeg_audio_source = discord.FFmpegPCMAudio("tmp.mp3")
     voice_client.play(ffmpeg_audio_source)
+
+    time.sleep(5)
 
     await ctx.send("再生しました。")
 
