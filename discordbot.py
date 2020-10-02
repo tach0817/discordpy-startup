@@ -27,9 +27,6 @@ async def ping(ctx):
 
     voice_client = ctx.message.guild.voice_client
 
-
-    await ctx.message.attachments[0].save("tmp.mp3")
-
     ffmpeg_audio_source = discord.FFmpegPCMAudio("tmp.mp3")
     voice_client.play(ffmpeg_audio_source)
 
