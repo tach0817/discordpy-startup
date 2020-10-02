@@ -16,8 +16,8 @@ async def on_command_error(ctx, error):
 
 
 @bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
+async def fire(ctx):
+#    await ctx.send('pong')
 
     voice_client = ctx.message.guild.voice_client
     voice_state = ctx.author.voice
@@ -28,14 +28,38 @@ async def ping(ctx):
 
     voice_client = ctx.message.guild.voice_client
 
-    ffmpeg_audio_source = discord.FFmpegPCMAudio("tmp.mp3")
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("Fire.mp3")
     voice_client.play(ffmpeg_audio_source)
 
-    time.sleep(5)
+    time.sleep(2)
 
-    await ctx.send("再生しました。")
+#    await ctx.send("再生しました。")
 
     await voice_client.disconnect()
+
+
+@bot.command()
+async def yes(ctx):
+#    await ctx.send('pong')
+
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+
+    channel = voice_state.channel
+
+    await channel.connect()
+
+    voice_client = ctx.message.guild.voice_client
+
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("Yes.mp3")
+    voice_client.play(ffmpeg_audio_source)
+
+    time.sleep(2)
+
+#    await ctx.send("再生しました。")
+
+    await voice_client.disconnect()
+
 
 
 bot.run(token)
