@@ -1,5 +1,3 @@
-import discord
-from discord.ext import commands
 import os
 import traceback
 import time
@@ -233,7 +231,7 @@ async def suzaku(ctx):
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("suzaku.mp3")
     voice_client.play(ffmpeg_audio_source)
-    time.sleep(18)
+    time.sleep(3)
     await voice_client.disconnect()
 
 bot.run(token)
