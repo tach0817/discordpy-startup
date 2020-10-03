@@ -14,8 +14,6 @@ token = os.environ['DISCORD_BOT_TOKEN']
 #        error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
 #        await ctx.send(error_msg)
 
-
-
 @bot.command()
 async def hiroshi(ctx):
     voice_client = ctx.message.guild.voice_client
@@ -338,6 +336,32 @@ async def usa(ctx):
     ffmpeg_audio_source = discord.FFmpegPCMAudio("usa.mp3")
     voice_client.play(ffmpeg_audio_source)
     time.sleep(7)
+    await voice_client.disconnect()
+
+
+@bot.command()
+async def sayou(ctx):
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+    channel = voice_state.channel
+    await channel.connect()
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("sayou.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    time.sleep(2)
+    await voice_client.disconnect()
+
+
+@bot.command()
+async def hikari(ctx):
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+    channel = voice_state.channel
+    await channel.connect()
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("hikari.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    time.sleep(2)
     await voice_client.disconnect()
 
 bot.run(token)
