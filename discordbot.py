@@ -324,7 +324,7 @@ async def white(ctx):
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("white.mp3")
     voice_client.play(ffmpeg_audio_source)
-    time.sleep(13)
+    time.sleep(9)
     await voice_client.disconnect()
 
 
