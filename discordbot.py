@@ -1,3 +1,5 @@
+import discord
+from discord.ext import commands
 import os
 import traceback
 import time
@@ -230,6 +232,19 @@ async def suzaku(ctx):
     await channel.connect()
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("suzaku.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    time.sleep(3)
+    await voice_client.disconnect()
+
+
+@bot.command()
+async def daiji(ctx):
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+    channel = voice_state.channel
+    await channel.connect()
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("daiji.mp3")
     voice_client.play(ffmpeg_audio_source)
     time.sleep(3)
     await voice_client.disconnect()
