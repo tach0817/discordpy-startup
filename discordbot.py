@@ -129,8 +129,98 @@ async def don(ctx):
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("donkey.mp3")
     voice_client.play(ffmpeg_audio_source)
+    time.sleep(6)
+    await voice_client.disconnect()
+
+
+@bot.command()
+async def kasasu(ctx):
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+    channel = voice_state.channel
+    await channel.connect()
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("kasasu.mp3")
+    voice_client.play(ffmpeg_audio_source)
     time.sleep(5)
     await voice_client.disconnect()
 
+
+@bot.command()
+async def hokuto(ctx):
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+    channel = voice_state.channel
+    await channel.connect()
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("hokuto.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    time.sleep(13)
+    await voice_client.disconnect()
+
+
+@bot.command()
+async def gaia(ctx):
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+    channel = voice_state.channel
+    await channel.connect()
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("gaia.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    time.sleep(7)
+    await voice_client.disconnect()
+
+
+@bot.command()
+async def atu(ctx):
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+    channel = voice_state.channel
+    await channel.connect()
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("atsumori.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    time.sleep(3)
+    await voice_client.disconnect()
+
+
+@bot.command()
+async def syatu(ctx):
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+    channel = voice_state.channel
+    await channel.connect()
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("syatu.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    time.sleep(16)
+    await voice_client.disconnect()
+
+
+@bot.command()
+async def ultra(ctx):
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+    channel = voice_state.channel
+    await channel.connect()
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("ultrasoul.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    time.sleep(8)
+    await voice_client.disconnect()
+
+
+@bot.command()
+async def jojo(ctx):
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+    channel = voice_state.channel
+    await channel.connect()
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("jojo.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    time.sleep(18)
+    await voice_client.disconnect()
 
 bot.run(token)
