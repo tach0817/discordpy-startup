@@ -262,4 +262,30 @@ async def romasaga(ctx):
     time.sleep(8)
     await voice_client.disconnect()
 
+
+@bot.command()
+async def kame(ctx):
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+    channel = voice_state.channel
+    await channel.connect()
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("kame.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    time.sleep(20)
+    await voice_client.disconnect()
+
+
+@bot.command()
+async def potate(ctx):
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+    channel = voice_state.channel
+    await channel.connect()
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("potate.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    time.sleep(6)
+    await voice_client.disconnect()
+
 bot.run(token)
