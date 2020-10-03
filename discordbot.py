@@ -246,7 +246,7 @@ async def daiji(ctx):
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("daiji.mp3")
     voice_client.play(ffmpeg_audio_source)
-    time.sleep(17)
+    time.sleep(8)
     await voice_client.disconnect()
 
 
@@ -272,7 +272,7 @@ async def kame(ctx):
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("kame.mp3")
     voice_client.play(ffmpeg_audio_source)
-    time.sleep(20)
+    time.sleep(13)
     await voice_client.disconnect()
 
 
