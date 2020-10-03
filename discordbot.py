@@ -127,7 +127,7 @@ async def don(ctx):
     channel = voice_state.channel
     await channel.connect()
     voice_client = ctx.message.guild.voice_client
-    ffmpeg_audio_source = discord.FFmpegPCMAudio("donkey.wav")
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("donkey.mp3")
     voice_client.play(ffmpeg_audio_source)
     time.sleep(5)
     await voice_client.disconnect()
