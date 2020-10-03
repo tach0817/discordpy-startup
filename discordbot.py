@@ -246,7 +246,20 @@ async def daiji(ctx):
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("daiji.mp3")
     voice_client.play(ffmpeg_audio_source)
-    time.sleep(3)
+    time.sleep(17)
+    await voice_client.disconnect()
+
+
+@bot.command()
+async def romasaga(ctx):
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+    channel = voice_state.channel
+    await channel.connect()
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("romasaga.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    time.sleep(8)
     await voice_client.disconnect()
 
 bot.run(token)
