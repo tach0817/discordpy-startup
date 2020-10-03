@@ -298,7 +298,7 @@ async def hiroshi(ctx):
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("hiroshi.mp3")
     voice_client.play(ffmpeg_audio_source)
-    time.sleep(6)
+    time.sleep(3)
     await voice_client.disconnect()
 
 bot.run(token)
