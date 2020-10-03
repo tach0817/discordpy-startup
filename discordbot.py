@@ -324,7 +324,20 @@ async def white(ctx):
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("white.mp3")
     voice_client.play(ffmpeg_audio_source)
-    time.sleep(9)
+    time.sleep(13)
+    await voice_client.disconnect()
+
+
+@bot.command()
+async def usa(ctx):
+    voice_client = ctx.message.guild.voice_client
+    voice_state = ctx.author.voice
+    channel = voice_state.channel
+    await channel.connect()
+    voice_client = ctx.message.guild.voice_client
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("usa.mp3")
+    voice_client.play(ffmpeg_audio_source)
+    time.sleep(7)
     await voice_client.disconnect()
 
 bot.run(token)
