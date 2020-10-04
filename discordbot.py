@@ -374,7 +374,7 @@ async def zawa(ctx):
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("zawa.mp3")
     voice_client.play(ffmpeg_audio_source)
-    time.sleep(2)
+    time.sleep(8)
     await voice_client.disconnect()
 
 bot.run(token)
