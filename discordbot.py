@@ -340,45 +340,6 @@ async def usa(ctx):
 
 
 @bot.command()
-async def sayou(ctx):
-    voice_client = ctx.message.guild.voice_client
-    voice_state = ctx.author.voice
-    channel = voice_state.channel
-    await channel.connect()
-    voice_client = ctx.message.guild.voice_client
-    ffmpeg_audio_source = discord.FFmpegPCMAudio("sayou.mp3")
-    voice_client.play(ffmpeg_audio_source)
-    time.sleep(2)
-    await voice_client.disconnect()
-
-
-@bot.command()
-async def hikari(ctx):
-    voice_client = ctx.message.guild.voice_client
-    voice_state = ctx.author.voice
-    channel = voice_state.channel
-    await channel.connect()
-    voice_client = ctx.message.guild.voice_client
-    ffmpeg_audio_source = discord.FFmpegPCMAudio("hikari.mp3")
-    voice_client.play(ffmpeg_audio_source)
-    time.sleep(2)
-    await voice_client.disconnect()
-
-
-@bot.command()
-async def nakanaide(ctx):
-    voice_client = ctx.message.guild.voice_client
-    voice_state = ctx.author.voice
-    channel = voice_state.channel
-    await channel.connect()
-    voice_client = ctx.message.guild.voice_client
-    ffmpeg_audio_source = discord.FFmpegPCMAudio("nakanaide.mp3")
-    voice_client.play(ffmpeg_audio_source)
-    time.sleep(3)
-    await voice_client.disconnect()
-
-
-@bot.command()
 async def donmai(ctx):
     voice_client = ctx.message.guild.voice_client
     voice_state = ctx.author.voice
@@ -402,7 +363,6 @@ async def shake(ctx):
     voice_client.play(ffmpeg_audio_source)
     time.sleep(8)
     await voice_client.disconnect()
-
 
 
 bot.run(token)
