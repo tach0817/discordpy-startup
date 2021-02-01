@@ -15,15 +15,15 @@ token = os.environ['DISCORD_BOT_TOKEN']
 #        await ctx.send(error_msg)
 
 @bot.command()
-async def hiroshi(ctx):
+async def xfile(ctx):
     voice_client = ctx.message.guild.voice_client
     voice_state = ctx.author.voice
     channel = voice_state.channel
     await channel.connect()
     voice_client = ctx.message.guild.voice_client
-    ffmpeg_audio_source = discord.FFmpegPCMAudio("hiroshi.mp3")
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("xfile.mp3")
     voice_client.play(ffmpeg_audio_source)
-    time.sleep(3)
+    time.sleep(9)
     await voice_client.disconnect()
 
 @bot.command()
