@@ -288,13 +288,13 @@ async def kame(ctx):
 
 
 @bot.command()
-async def potate(ctx):
+async def honda(ctx):
     voice_client = ctx.message.guild.voice_client
     voice_state = ctx.author.voice
     channel = voice_state.channel
     await channel.connect()
     voice_client = ctx.message.guild.voice_client
-    ffmpeg_audio_source = discord.FFmpegPCMAudio("potate.mp3")
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("honda.mp3")
     voice_client.play(ffmpeg_audio_source)
     time.sleep(6)
     await voice_client.disconnect()
