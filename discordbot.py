@@ -296,7 +296,7 @@ async def honda(ctx):
     voice_client = ctx.message.guild.voice_client
     ffmpeg_audio_source = discord.FFmpegPCMAudio("honda.mp3")
     voice_client.play(ffmpeg_audio_source)
-    time.sleep(6)
+    time.sleep(7)
     await voice_client.disconnect()
 
 
