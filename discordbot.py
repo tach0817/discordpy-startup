@@ -236,15 +236,15 @@ async def jojo(ctx):
 
 
 @bot.command()
-async def suzaku(ctx):
+async def sumo(ctx):
     voice_client = ctx.message.guild.voice_client
     voice_state = ctx.author.voice
     channel = voice_state.channel
     await channel.connect()
     voice_client = ctx.message.guild.voice_client
-    ffmpeg_audio_source = discord.FFmpegPCMAudio("suzaku.mp3")
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("sumo.mp3")
     voice_client.play(ffmpeg_audio_source)
-    time.sleep(3)
+    time.sleep(8)
     await voice_client.disconnect()
 
 
