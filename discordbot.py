@@ -27,16 +27,16 @@ async def xfile(ctx):
     await voice_client.disconnect()
 
 @bot.command()
-async def fire(ctx):
+async def inid(ctx):
 #    await ctx.send('pong')
     voice_client = ctx.message.guild.voice_client
     voice_state = ctx.author.voice
     channel = voice_state.channel
     await channel.connect()
     voice_client = ctx.message.guild.voice_client
-    ffmpeg_audio_source = discord.FFmpegPCMAudio("Fire.mp3")
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("inid.mp3")
     voice_client.play(ffmpeg_audio_source)
-    time.sleep(2)
+    time.sleep(7)
 #    await ctx.send("再生しました。")
     await voice_client.disconnect()
 
@@ -72,16 +72,16 @@ async def f1(ctx):
 
 
 @bot.command()
-async def f2(ctx):
+async def goemon(ctx):
 #    await ctx.send('pong')
     voice_client = ctx.message.guild.voice_client
     voice_state = ctx.author.voice
     channel = voice_state.channel
     await channel.connect()
     voice_client = ctx.message.guild.voice_client
-    ffmpeg_audio_source = discord.FFmpegPCMAudio("passing2.mp3")
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("goemon.mp3")
     voice_client.play(ffmpeg_audio_source)
-    time.sleep(5)
+    time.sleep(13)
 #    await ctx.send("再生しました。")
     await voice_client.disconnect()
 
@@ -249,13 +249,13 @@ async def sumo(ctx):
 
 
 @bot.command()
-async def daiji(ctx):
+async def tetsuko(ctx):
     voice_client = ctx.message.guild.voice_client
     voice_state = ctx.author.voice
     channel = voice_state.channel
     await channel.connect()
     voice_client = ctx.message.guild.voice_client
-    ffmpeg_audio_source = discord.FFmpegPCMAudio("daiji.mp3")
+    ffmpeg_audio_source = discord.FFmpegPCMAudio("tetsuko.mp3")
     voice_client.play(ffmpeg_audio_source)
     time.sleep(8)
     await voice_client.disconnect()
